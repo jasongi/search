@@ -1,18 +1,3 @@
-# search
-
-an implementation of Branch and Bound (with dynamic programming), A* Search and Stochastic Hill Local search done for a university assignment in Artificial Machine Intelligence.
-
-Use Branch and Bound Dynamic Programming search on a node file:
-dyn-branch-search <node file>
-
-Use A* search on a node file + heuristic file:
-astar-search <node file> <heuristic file>
-
-Use Stochastic Hill Local search on a 3D Map file:
-stochastic-hill <mapfile>
-
-Test files are included under localtest and inftest.
-
 /*  
     Copyright (C) 2014 Jason Giancono (jasongiancono@gmail.com)
 
@@ -26,3 +11,10 @@ Test files are included under localtest and inftest.
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 */
+//solves a graph using the A* method
+Solution* astar(char* startnode,char* endnode,LinkedList* list);
+
+//helper function for A* which expands the neighbours
+void astar_checkneighbours(Solution* solution,LinkedList* solList);
+
+void readHeuristics(char* filename, LinkedList* graph);
